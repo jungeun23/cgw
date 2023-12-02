@@ -18,7 +18,7 @@ public class Screening {
     @Comment("상영번호")
     private Long screeningNo;
 
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIME)
     @Comment("상영시작시간")
     private Date screenStartTime;
 
