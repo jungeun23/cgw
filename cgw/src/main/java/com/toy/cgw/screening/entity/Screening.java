@@ -1,5 +1,7 @@
 package com.toy.cgw.screening.entity;
 
+import com.toy.cgw.movie.entity.Movie;
+import com.toy.cgw.screen.entity.Screen;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,11 +24,11 @@ public class Screening {
     @Comment("상영시작시간")
     private Date screenStartTime;
 
-    @Column(length = 10 )
-    @Comment("상영관번호")
-    private String screenNo;
+    @ManyToOne
+    @JoinColumn(name = "screenNo")
+    private Screen screen;
 
-    @Column
-    @Comment("영화번호")
-    private Long movieNo;
+    @ManyToOne
+    @JoinColumn(name = "movieNo")
+    private Movie  movie;
 }

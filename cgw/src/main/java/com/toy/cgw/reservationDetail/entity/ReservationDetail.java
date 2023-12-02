@@ -1,5 +1,7 @@
 package com.toy.cgw.reservationDetail.entity;
 
+import com.toy.cgw.price.entity.Price;
+import com.toy.cgw.reservation.entity.Reservation;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +22,13 @@ public class ReservationDetail {
     @Column(length = 5)
     @Comment("좌석번호")
     private String seatNo;
+
+    @ManyToOne
+    @JoinColumn(name = "resvNo")
+    private Reservation reservation;
+
+    @ManyToOne
+    @JoinColumn(name = "priceNo")
+    private Price price;
 
 }
